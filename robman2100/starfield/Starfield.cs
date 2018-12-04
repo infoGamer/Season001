@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
  
- 
+//Attach this to an empty game object
 public class Starfield : MonoBehaviour
 {
 	public int		MaxStars = 100;
