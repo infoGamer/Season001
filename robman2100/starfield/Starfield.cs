@@ -50,4 +50,33 @@ public class Starfield : MonoBehaviour
 		float y = Random.Range( 0, height );
 		return new Vector3 ( x - xOffset , y - yOffset, 0 );
 	}
+	void Update ()
+	{
+		for ( int i=0; i<MaxStars; i++ )
+		{
+			Vector3 pos = Stars[ i ].position + transform.position;
+ 
+			if ( pos.x < ( theCamera.position.x - xOffset ) )
+			{
+				pos.x += FieldWidth;
+			}
+			else if ( pos.x > ( theCamera.position.x + xOffset ) )
+			{
+				pos.x -= FieldWidth;
+			}
+ 
+			if ( pos.y < ( theCamera.position.y - yOffset ) )
+			{
+				pos.y += FieldHeight;
+			}
+			else if ( pos.y > ( theCamera.position.y + yOffset ) )
+			{
+				pos.y -= FieldHeight;
+			}
+ 
+			Stars[ i ].position = pos - transform.position;
+		}
+		Particles.SetParticles( Stars, Stars.Length );
+ 
+	}
 }
