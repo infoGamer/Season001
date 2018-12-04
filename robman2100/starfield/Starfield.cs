@@ -12,6 +12,8 @@ public class Starfield : MonoBehaviour
 	public float	FieldWidth = 20f;
 	public float	FieldHeight = 25f;
 	public bool		Colorize = false;
+	public float xOffset;
+	public float yOffset;
 	
 	ParticleSystem						Particles;
 	ParticleSystem.Particle[] Stars;
